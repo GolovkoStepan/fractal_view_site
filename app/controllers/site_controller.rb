@@ -3,7 +3,7 @@ class SiteController < ApplicationController
 
   end
 
-  def about
+  def download
 
   end
 
