@@ -11,5 +11,12 @@
           = link_to "Работы пользователей", users_works_path
         %li.nav-item.nav-item-link
           = link_to "Автор", author_path
-        %li.nav-item
-          = link_to "Вход", '#', class: "btn btn-outline-primary btn-lg btn-w-100"
+        -  if current_user.present?
+          %li.nav-item.nav-item-link
+            = link_to "Кабинет", '#'
+          %li.nav-item.nav-item-link
+            = link_to(destroy_user_session_path, method: :delete) do
+              = content_tag('i', nil, class: 'fas fa-sign-out-alt text-white text-20')
+        - else
+          %li.nav-item.nav-item-link
+            = link_to "", new_user_session_path, class: "fas fa-sign-in-alt"
