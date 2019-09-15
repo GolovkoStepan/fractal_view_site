@@ -1,0 +1,16 @@
+.row
+  .col-sm-6
+    = image_tag path_to_image('program_window_1.png'), class: 'about-program-img'
+  .col-sm-6
+    .about-program-content
+      .title
+        Fractal View
+      .content
+        Данное приложение позволяет создавать изображения некторых типов фракталов, таких как Множество Мандельброта, множество Жюлиа, лямбда - фрактал.
+      .content
+        Также есть возможность выбора размера изображения, качества прорисовки и цветовую схему
+      .link-title
+        Перейти на страницу загрузки
+      = link_to "#" do
+        .link-icon
+          %i.fas.fa-cloud-download-alt
