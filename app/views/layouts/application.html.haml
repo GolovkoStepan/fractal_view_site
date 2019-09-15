@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title FractalViewSite
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    - if notice
+      .alert.alert-info.alert-dismissible.fade.show.m-0{ role: "alert" }
+        = notice
+        %button{ type: "button", class: "close", "data-dismiss" => "alert", "aria-label" => "Close" }
+          %span{ "aria-hidden" => "true" } &times
+    - if alert
+      .alert.alert-danger.alert-dismissible.fade.show.m-0{ role: "alert" }
+        = alert
+        %button{ type: "button", class: "close", "data-dismiss" => "alert", "aria-label" => "Close" }
+          %span{ "aria-hidden" => "true" } &times
+
+    = render partial: 'shared/header'
+
+    = yield
