@@ -18,6 +18,8 @@
         %button{ type: "button", class: "close", "data-dismiss" => "alert", "aria-label" => "Close" }
           %span{ "aria-hidden" => "true" } &times
 
-    = render partial: 'shared/header'
+    .img-main-container
+      = render partial: 'shared/header'
 
-    = yield
+      .container
+        = yield
