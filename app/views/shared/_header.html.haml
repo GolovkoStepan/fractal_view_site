@@ -2,8 +2,9 @@
   .container
     .p-2
     %nav.navbar.navbar-expand-sm
-      .navbar-brand.text-30.text-w-600.text-white
-        Fractal View
+      = link_to :root do
+        .navbar-brand.text-30.text-w-600.text-white
+          Fractal View
       %ul.navbar-nav.ml-auto
         %li.nav-item.nav-item-link
           = link_to "Загрузить", download_path
