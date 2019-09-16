@@ -1,0 +1,13 @@
+.py-100
+
+.row
+  .col-sm-6.offset-sm-3
+    %h1.text-white= t('.forgot_your_password')
+    = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      = bootstrap_devise_error_messages!
+      .form-group
+        = f.label :email, class: "text-white"
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+      .form-group
+        = f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary'
+    = render 'devise/shared/links'
