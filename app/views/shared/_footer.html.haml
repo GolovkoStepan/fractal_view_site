@@ -12,12 +12,8 @@
               = link_to "Автор", author_path
       .col-sm-6
         %ul.footer-social-links.mt-100
-          %li
-            = link_to '#' do
-              %i.fab.fa-github
-          %li
-            = link_to '#' do
-              %i.fab.fa-vk
-          %li
-            = link_to '#' do
-              %i.fab.fa-telegram
+          - SocialMedia.all.each do |item|
+            %li
+              = link_to item.site_url do
+                = content_tag('i', nil, class: item.icon_class)
+
