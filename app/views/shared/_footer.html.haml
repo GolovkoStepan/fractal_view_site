@@ -4,16 +4,16 @@
       .col-sm-6
         .mt-5
           %ul.footer-nav-links
-            %li
-              = link_to "Загрузить", download_path
-            %li
-              = link_to "Работы пользователей", users_works_path
-            %li
-              = link_to "Автор", author_path
+            %li.nav-item-link
+              = link_to "Загрузить", download_path, class: "#{'nav-active' if current_page?(download_path)}"
+            %li.nav-item-link
+              = link_to "Работы пользователей", users_works_path, class: "#{'nav-active' if current_page?(users_works_path)}"
+            %li.nav-item-link
+              = link_to "Автор", author_path, class: "#{'nav-active' if current_page?(author_path)}"
       .col-sm-6
         %ul.footer-social-links.mt-100
           - SocialMedia.all.each do |item|
-            %li
+            %li.nav-item-link
               = link_to item.site_url do
                 = content_tag('i', nil, class: item.icon_class)
 

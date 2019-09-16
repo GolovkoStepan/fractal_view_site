@@ -7,11 +7,12 @@
           Fractal View
       %ul.navbar-nav.ml-auto
         %li.nav-item.nav-item-link
-          = link_to "Загрузить", download_path
+          = link_to "Загрузить", download_path, class: "#{'nav-active' if current_page?(download_path)}"
         %li.nav-item.nav-item-link
-          = link_to "Работы пользователей", users_works_path
+          = link_to "Работы пользователей", users_works_path, class: "#{'nav-active' if current_page?(users_works_path)}"
         %li.nav-item.nav-item-link
-          = link_to "Автор", author_path
+          = link_to "Автор", author_path, class: "#{'nav-active' if current_page?(author_path)}"
+
         -  if current_user.present?
           %li.nav-item.nav-item-link
             = link_to "Кабинет", '#'
