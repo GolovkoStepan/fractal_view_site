@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'haml'
+gem "haml-rails", "~> 2.0"
 gem 'jquery-rails'
 gem 'jquery-slick-rails'
 gem 'devise'
