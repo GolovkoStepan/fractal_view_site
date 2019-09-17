@@ -28,4 +28,6 @@ class User < ApplicationRecord
   enum role: %I[user moderator admin]
   enum status: %I[active banned blocked]
 
+  has_one_attached :avatar
+
 end
