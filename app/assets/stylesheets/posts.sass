@@ -6,8 +6,13 @@
   color: white !important
 
   .post-title
-    font-size: 1.5rem
     margin-bottom: 1rem
+    a
+      font-size: 1.5rem
+      color: white
+      text-decoration: none
+      &:hover
+        color: blue
 
   .post-img
     margin-bottom: 1rem
@@ -20,12 +25,24 @@
     padding: 0.5rem
     border: 1px solid white
     border-radius: 5px
+    font-weight: 500
 
-  .post-user, .post-date
-    display: inline-block
+    .post-user, .post-date
+      display: inline-block
 
-  .post-date
-    float: right
+    .post-date
+      float: right
+
+    .post-user
+      a
+        text-decoration: none
+        color: white
+        &:hover
+          color: blue
+
+.btn-create-post
+  margin-top: 4rem
+
 
 
 
