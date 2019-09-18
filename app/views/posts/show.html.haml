@@ -1,8 +1,12 @@
 .row
-  .col-sm-12
+  .col-sm-8
     .post-container
       .post-title
         = @post.title
+
+      .post-img-link
+        Скачать оригинал
+        = link_to "", rails_blob_path(@post.main_picture, disposition: "attachment"), class: "fas fa-download"
 
       .post-img
         = image_tag(url_for(@post.main_picture))
