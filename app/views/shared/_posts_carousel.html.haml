@@ -1,0 +1,19 @@
+.row
+  .col-sm-12
+    .text-30.text-white.text-center.mb-5
+      Последние добавленные пользователями изображения
+    #post-carousel.carousel.slide{"data-ride" => "carousel"}
+      .carousel-inner
+        - @posts.each_with_index do |post, index|
+          - if index == 0
+            .carousel-item.active{"data-interval" => "5000"}
+              = link_to post do
+                = image_tag(url_for(post.main_picture), class: "d-block carousel-img-size")
+          - else
+            .carousel-item{"data-interval" => "5000"}
+              = link_to post do
+                = image_tag(url_for(post.main_picture), class: "d-block carousel-img-size")
+      %a.carousel-control-prev{"data-slide" => "prev", :href => "#post-carousel", :role => "button"}
+        %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+      %a.carousel-control-next{"data-slide" => "next", :href => "#post-carousel", :role => "button"}
+        %span.carousel-control-next-icon{"aria-hidden" => "true"}
