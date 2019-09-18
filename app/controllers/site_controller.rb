@@ -10,10 +10,6 @@ class SiteController < ApplicationController
 
   end
 
-  def users_works
-
-  end
-
   def author
 
   end

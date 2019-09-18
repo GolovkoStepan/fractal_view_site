@@ -1,0 +1,10 @@
+.post-container
+  .post-title
+    = post.title
+  .post-img
+    = image_tag(post.main_picture)
+  .post-footer
+    .post-user
+      = "Отправил: #{post.user.email}"
+    .post-date
+      = "Дата: #{post.created_at.strftime("%d.%m.%Y %H:%M")}"
