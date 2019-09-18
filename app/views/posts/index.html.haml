@@ -1,3 +1,5 @@
 .row
   .col-sm-8
-    = render partial: "posts/shared/post", collection: Post.all
+    = render partial: "posts/shared/post", collection: @posts
+    .d-flex.justify-content-center
+      = paginate @posts, theme: 'twitter-bootstrap-4'

@@ -4,9 +4,9 @@
 
 #User.create!(email: "admin@admin.com", password: "123123123", password_confirmation: "123123123")
 
-#p = Post.new
-#p.title = "Новое изображение фрактала"
-#p.description = "Координаты: 0.843643255732, 0.2374853563475"
-#p.main_picture.attach(io: File.open("#{Rails.root}/app/assets/images/fractal_1.png"), filename: 'fractal_1.png')
-#p.user = User.find(1)
-#p.save!
+p = Post.new
+p.title = "Новое изображение фрактала"
+p.description = "Координаты: 0.843643255732, 0.2374853563475"
+p.main_picture.attach(io: File.open("#{Rails.root}/app/assets/images/fractal_1.png"), filename: 'fractal_1.png')
+p.user = User.find(1)
+p.save!

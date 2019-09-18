@@ -14,4 +14,6 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_one_attached :main_picture
+
+  paginates_per 2
 end
