@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   resources :posts
 
   get "download", to: "site#download"
-  get "author", to: "site#author"
 
 end

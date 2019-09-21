@@ -1,0 +1,22 @@
+.py-100
+
+.row
+  .col-sm-6.offset-3
+    %h2.mb-5.text-white Создание поста
+    .row
+      .col-sm-12
+        .text-white.p-2.mb-2
+          = @post.errors.full_messages if @post.errors.full_messages.present?
+    .row
+      .col-sm-12
+        = form_with(model: @post, local: true) do |f|
+          .form-group
+            = f.label :title, class: "form-label text-white"
+            = f.text_field :title, class: "form-control form-control"
+          .form-group
+            = f.label :description, class: "form-label text-white"
+            = f.text_area :description, class: "form-control"
+          .form-group
+            = f.file_field :main_picture
+          .form-group
+            = f.submit "Создать", class: "btn btn-success btn-lg btn-block"

@@ -10,8 +10,4 @@ class SiteController < ApplicationController
 
   end
 
-  def author
-
-  end
-
 end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def new
-
+    @post = Post.new
   end
 
   def show
@@ -15,7 +15,15 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(post_params.merge(user: current_user))
+    @post.main_picture.attach(params[:post][:main_picture])
 
+    if @post.save
+      redirect_to @post, notice: "Пост успешно создан."
+    else
+      flash[:alert] = "При создании поста возникли ошибки"
+      render :new
+    end
   end
 
   def edit
@@ -28,6 +36,12 @@ class PostsController < ApplicationController
 
   def destroy
 
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :description)
   end
 
 end

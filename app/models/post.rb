@@ -15,5 +15,7 @@ class Post < ApplicationRecord
 
   has_one_attached :main_picture
 
+  validates :title, :description, :main_picture, presence: true
+
   paginates_per 2
 end
