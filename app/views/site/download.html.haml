@@ -1,1 +1,57 @@
-<h1>просто тип</h1>
+.py-100
+
+.row
+  .col-sm-6
+    .download-info-text
+      .mb-1
+        Программа
+        .text-red.d-inline
+          Fractal View 1.0
+        доступна для скачивания на нашем сайте для операционных
+        систем Windows и MacOS.
+      .m-0
+        В текущей версии исправлены ошибки, улучшена произовдительность
+        при вычислениях с большим числом итераций за счет использования многопоточности и параллельных циклов.
+  .col-sm-6
+    .d-flex.justify-content-center.flex-column.w-100.h-100
+      .align-self-center
+        = link_to "#", class: "btn btn-primary btn-lg text-left mb-4 btn-w-350" do
+          .d-flex
+            .text-w-600.text-center.mr-2
+              Скачать Fractal View 1.0
+              %br
+              для MacOS
+            .ml-4.text-40
+              %i.fab.fa-apple
+      .align-self-center
+        = link_to "#", class: "btn btn-primary btn-lg text-left btn-w-350" do
+          .d-flex
+            .text-w-600.text-center.mr-2
+              Скачать Fractal View 1.0
+              %br
+              для Windows 10
+            .text-40.ml-4
+              %i.fab.fa-windows
+
+.py-100
+
+.row
+  .col-sm-12
+    .develop-title
+      Примите участие в разработке!
+    .develop-img
+      = image_tag(image_url('about_programm_1.png'))
+    .d-flex
+      .develop-body
+        Вы можете помочь в разработке программы Fractal View.
+        %br
+        Исходный код доступен в репозитории GitHub.
+      .p-3
+        = link_to "https://github.com/GolovkoStepan/FractalView-for-MacOS", class: "btn btn-primary btn-lg text-left btn-w-350" do
+          .d-flex
+            .text-w-600.text-center.mr-2
+              Перейти в репозиторий
+              %br
+              GitHub
+            .ml-4.text-40
+              %i.fab.fa-github
