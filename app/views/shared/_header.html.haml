@@ -13,7 +13,7 @@
 
         -  if current_user.present?
           %li.nav-item.nav-item-link
-            = link_to "Кабинет", '#'
+            = link_to "Кабинет", account_user_info_path, class: "#{'nav-active' if current_controller?('accounts')}"
           %li.nav-item.nav-item-link
             = link_to(destroy_user_session_path, method: :delete) do
               = content_tag('i', nil, class: 'fas fa-sign-out-alt text-white text-20')

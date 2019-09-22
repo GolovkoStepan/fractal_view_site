@@ -5,7 +5,6 @@
 #  id                     :bigint           not null, primary key
 #  first_name             :string
 #  last_name              :string
-#  age                    :string
 #  gender                 :string
 #  bio                    :text
 #  status                 :integer
@@ -17,6 +16,7 @@
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  date_of_birth          :datetime
 #
 
 require 'test_helper'

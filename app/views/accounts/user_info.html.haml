@@ -1,0 +1,31 @@
+.row
+  .col-sm-4
+    .py-100
+    = render partial: "accounts/shared/left_menu"
+  .col-sm-8
+    .p-5
+    %h2.mb-5.text-white Редактирование личной информации
+    .row
+      .col-sm-12
+        .text-white.p-2.mb-2
+          = @user.errors.full_messages if @user.errors.full_messages.present?
+    .row
+      .col-sm-12
+        = form_with model: @user, url: account_update_user_info_path, local: true do |f|
+          .form-group
+            = f.label :first_name, class: "form-label text-white"
+            = f.text_field :first_name, class: "form-control"
+          .form-group
+            = f.label :last_name, class: "form-label text-white"
+            = f.text_field :last_name, class: "form-control"
+          .form-group
+            = f.label :date_of_birth, class: "form-label text-white"
+            = f.date_field :date_of_birth, class: "form-control"
+          .form-group
+            = f.label :gender, class: "form-label text-white"
+            = f.select(:gender, [["Мужской", "male"], ["Женский", "female"]], {}, class: "form-control")
+          .form-group
+            = f.label :bio, class: "form-label text-white"
+            = f.text_area :bio, class: "form-control"
+          .form-group
+            = f.submit "Сохранить", class: "btn btn-success btn-lg btn-block"

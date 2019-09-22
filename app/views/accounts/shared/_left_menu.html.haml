@@ -1,0 +1,4 @@
+.nav.flex-column.nav-pills{ "aria-orientation": "vertical" }
+  = link_to "Личная информация", account_user_info_path, class: "nav-link #{'active' if current_page?(account_user_info_path)}"
+  = link_to "Уведомления", account_notifications_path, class: "nav-link #{'active' if current_page?(account_notifications_path)}"
+  = link_to "Мои посты", account_my_posts_path, class: "nav-link #{'active' if current_page?(account_my_posts_path)}"
