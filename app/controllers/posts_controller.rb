@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
-    @posts = Post.order(:title).page params[:page]
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.page(params[:page])
   end
 
   def new

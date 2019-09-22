@@ -33,6 +33,7 @@ gem 'font-awesome-sass'
 gem 'translate_enum'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
