@@ -27,12 +27,26 @@
     = form_with(url: post_comments_path(@post), method: :post, local: true, class: "mb-5") do |f|
       .form-group
         = f.label "Текст комментария:", class: "form-label text-white"
-        = f.text_area :text, class: "form-control form-control-lg"
-      = f.submit "Добавить комментарий", class: "btn btn-primary btn-block text-white"
+        = f.text_area :text, class: "form-control form-control-lg", :onkeyup => "checkField()"
+      = f.submit "Добавить комментарий", class: "btn btn-primary btn-block text-white", id: "comment_submit"
 
-    %p.text-white.p-2.mb-2 Комментарии пользователей:
+    - if @comments.present?
+      %p.text-white.p-2.mb-2 Комментарии пользователей:
 
     = render partial: "posts/shared/comment", collection: @comments
 
     .d-flex.justify-content-center.mt-5
       = paginate @comments, theme: 'twitter-bootstrap-4'
+      
+:javascript
+  $(function() {
+    $('#comment_submit').attr('disabled', 'disabled');
+  });
+
+  function checkField() {
+    if ($('#text').val().length != 0) {
+        $('#comment_submit').removeAttr('disabled');
+    } else {
+        $('#comment_submit').attr('disabled', 'disabled');
+    }
+  }

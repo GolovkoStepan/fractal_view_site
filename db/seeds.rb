@@ -10,3 +10,7 @@ p.description = "Координаты: 0.843643255732, 0.2374853563475"
 p.main_picture.attach(io: File.open("#{Rails.root}/app/assets/images/fractal_1.png"), filename: 'fractal_1.png')
 p.user = User.find(1)
 p.save!
+
+#ActiveRecord::Base.connection.tables.each do |table_name|
+#  ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
+#end
