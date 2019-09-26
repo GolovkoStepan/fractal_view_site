@@ -22,12 +22,12 @@ class Post < ApplicationRecord
 
   paginates_per 2
 
-  after_create :notify_user
+  after_create :notify_users
 
   private
 
   def notify_users
-    users = User.where.not(user.id)
+    users = User.where.not(id: self.user.id)
     Notification.notify_for_post_commented(users: users, subject: self)
   end
 
