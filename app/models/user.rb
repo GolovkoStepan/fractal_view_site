@@ -20,13 +20,15 @@
 #
 
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  include TranslateEnum
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   enum role: %I[user moderator admin]
+  translate_enum :role
+
   enum status: %I[active banned blocked]
+  translate_enum :status
 
   has_one_attached :avatar
 

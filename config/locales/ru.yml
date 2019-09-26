@@ -1,10 +1,71 @@
 ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        two: Пользователя
+        few: Пользователей
+        many: Пользователей
+        other: Пользователи
+      social_media:
+        one: Соц. ресурс
+        two: Соц. ресурса
+        few: Соц. ресурсов
+        many: Соц. ресурсов
+        other: Соц. ресурсы
+      post:
+        one: Пост
+        two: Поста
+        few: Постов
+        many: Постов
+        other: Посты
+      comment:
+        one: Комментарий
+        two: Комментария
+        few: Комментариев
+        many: Комментариев
+        other: Комментарии
+      notification:
+        one: Уведомление
+        two: Уведомления
+        few: Уведомлений
+        many: Уведомлений
+        other: Уведомлении
+    attributes:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        gender: Пол
+        bio: О себе
+        status: Статус
+        role: Роль
+        role_list:
+          user: Пользователь
+          moderator: Модератор
+          admin: Администратор
+        email: Email
+        date_of_birth: Дата рождения
+      social_media:
+        site_name: Название сайта
+        site_url: URL
+        icon_class: CSS класс иконки
+      post:
+        title: Заголовок поста
+        description: Текст поста
+        main_picture: Изображение
+      comment:
+        body: Текст комментария
+      notification:
+        content: Текст уведомления
+        read: Прочитано?
+        subject_type: Тип прикрепленной модели
+
   views:
     pagination:
-      first: "&laquo; Первая"
-      last: "Последняя &raquo;"
-      previous: "&lsaquo; Предыдущая"
-      next: "Следующая &rsaquo;"
+      first: "&laquo; <<"
+      last: ">> &raquo;"
+      previous: "&lsaquo; <"
+      next: "> &rsaquo;"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
@@ -15,3 +76,12 @@ ru:
           other: "Displaying <b>all %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+
+  date:
+    formats:
+      short: "%d.%m"
+  time:
+    formats:
+      long: "%d.%m.%Y %H:%M:%S"
+      human: "%d %B %Y"
+      month: "%d.%m"
