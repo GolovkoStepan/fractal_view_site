@@ -22,6 +22,10 @@ class Notification < ApplicationRecord
 
   default_scope { order('updated_at desc') }
 
+  before_save :set_attr, if: :new_record?
+
+  paginates_per 5
+
   def read!
     update_attribute(:read, true)
   end
@@ -38,6 +42,12 @@ class Notification < ApplicationRecord
   def self.notify_for_post_commented(users:, subject:)
     content_text = "Пользователь #{subject.user.full_name} прокомментировал ваш пост."
     send_to(users: users, content: content_text, subject: subject)
+  end
+
+  private
+
+  def set_attr
+    self.read = false
   end
 
 end

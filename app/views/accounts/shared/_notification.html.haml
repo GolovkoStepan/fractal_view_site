@@ -1,14 +1,22 @@
-.notify-container
-  .notify-header
-    .notify-date
-      = notification.created_at.strftime("%d.%m.%Y %H:%M")
-    .notify-read.ml-auto
-      = notification.read? ? "Прочитано" : "Не прочитано"
-  .notify-content
-    = notification.content
-    - if notification.subject_type = "Comment"
-      .notify-comment-text
-        Текст комментария:
-        = notification.subject.body
-  .notify-links
-    = link_to "Перейти к посту", notification.subject.post
+- if notification.subject.present?
+  .notify-container
+    .notify-header
+      .notify-date
+        = notification.created_at.strftime("%d.%m.%Y %H:%M")
+      .notify-read.ml-auto
+        - if notification.read?
+          .blue= "Прочитано"
+        - else
+          .red= "Не прочитано"
+    .notify-content
+      = notification.content
+      - if notification.subject_type = "Comment"
+        .notify-comment-text
+          Текст комментария:
+          = notification.subject.body
+    .notify-links
+      - unless notification.read?
+        = link_to "Отметить прочитанным", account_notification_read_path(notification)
+      = link_to "Перейти к посту", notification.subject.post
+- else
+  - notification.destroy
