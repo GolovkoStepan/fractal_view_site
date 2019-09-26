@@ -29,11 +29,13 @@ gem 'jquery-slick-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~>  5.6.1'
 gem 'translate_enum'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'activeadmin'
+gem 'arctic_admin', '~> 3.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
