@@ -2,7 +2,7 @@
 #
 # Table name: social_media
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  site_name  :string
 #  site_url   :string
 #  icon_class :string

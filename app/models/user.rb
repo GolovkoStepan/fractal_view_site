@@ -2,10 +2,9 @@
 #
 # Table name: users
 #
-#  id                     :bigint           not null, primary key
+#  id                     :integer          not null, primary key
 #  first_name             :string
 #  last_name              :string
-#  date_of_birth          :datetime
 #  gender                 :string
 #  bio                    :text
 #  status                 :integer
@@ -17,6 +16,8 @@
 #  remember_created_at    :datetime
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  date_of_birth          :datetime
+#
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:

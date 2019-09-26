@@ -22,7 +22,7 @@ class AccountsController < ApplicationController
   end
 
   def notifications
-
+    @notifications = Notification.where(user: current_user)
   end
 
   def my_posts

@@ -1,0 +1,14 @@
+.notify-container
+  .notify-header
+    .notify-date
+      = notification.created_at.strftime("%d.%m.%Y %H:%M")
+    .notify-read.ml-auto
+      = notification.read? ? "Прочитано" : "Не прочитано"
+  .notify-content
+    = notification.content
+    - if notification.subject_type = "Comment"
+      .notify-comment-text
+        Текст комментария:
+        = notification.subject.body
+  .notify-links
+    = link_to "Перейти к посту", notification.subject.post

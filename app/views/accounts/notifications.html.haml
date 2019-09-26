@@ -1,5 +1,8 @@
-.py-100
-
 .row
   .col-sm-4
+    .py-100
     = render partial: "accounts/shared/left_menu"
+
+  .col-sm-8
+    .p-5
+    = render partial: "accounts/shared/notification", collection: @notifications
