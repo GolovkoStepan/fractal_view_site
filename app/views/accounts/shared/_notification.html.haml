@@ -10,13 +10,16 @@
           .red= "Не прочитано"
     .notify-content
       = notification.content
-      - if notification.subject_type = "Comment"
+      - if notification.subject_type == "Comment"
         .notify-comment-text
           Текст комментария:
           = notification.subject.body
     .notify-links
       - unless notification.read?
         = link_to "Отметить прочитанным", account_notification_read_path(notification)
-      = link_to "Перейти к посту", notification.subject.post
+      - if notification.subject_type == "Comment"
+        = link_to "Перейти к посту", notification.subject.post
+      - if notification.subject_type == "Post"
+        = link_to "Перейти к посту", notification.subject
 - else
   - notification.destroy
