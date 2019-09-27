@@ -304,7 +304,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  config.footer = 'Разработано: Степан Головко'
+  config.footer = "Панель администратора Fractal View Site"
 
   # == Sorting
   #
