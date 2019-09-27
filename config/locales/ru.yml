@@ -62,10 +62,10 @@ ru:
 
   views:
     pagination:
-      first: "&laquo; <<"
-      last: ">> &raquo;"
-      previous: "&lsaquo; <"
-      next: "> &rsaquo;"
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
       truncate: "&hellip;"
   helpers:
     page_entries_info:
