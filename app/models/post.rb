@@ -28,7 +28,7 @@ class Post < ApplicationRecord
 
   def notify_users
     users = User.where.not(id: self.user.id)
-    Notification.notify_for_post_commented(users: users, subject: self)
+    Notification.notify_for_post_created(users: users, subject: self)
   end
 
 end
