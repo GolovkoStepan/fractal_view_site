@@ -40,8 +40,10 @@ class Notification < ApplicationRecord
   end
 
   def self.notify_for_post_commented(users:, subject:)
-    content_text = "Пользователь #{subject.user.full_name} прокомментировал ваш пост."
-    send_to(users: users, content: content_text, subject: subject)
+    if subject.post.user != subject.user
+      content_text = "Пользователь #{subject.user.full_name} прокомментировал ваш пост."
+      send_to(users: users, content: content_text, subject: subject)
+    end
   end
 
   private

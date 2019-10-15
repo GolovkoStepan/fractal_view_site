@@ -22,6 +22,8 @@
 class User < ApplicationRecord
   include TranslateEnum
 
+  has_many :notifications
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   enum role: %I[user moderator admin]
