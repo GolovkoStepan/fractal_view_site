@@ -28,7 +28,7 @@
       = form_with(url: post_comments_path(@post), method: :post, local: true, class: "mb-5") do |f|
         .form-group
           = f.label "Текст комментария:", class: "form-label text-white"
-          = f.text_area :text, class: "form-control form-control-lg", onkeyup: "checkField()", placeholder: "Мин. 6 символов"
+          = f.text_area :text, class: "form-control form-control-lg", onkeyup: "checkField()", placeholder: "Мин. 2 символа"
         = f.submit "Добавить комментарий", class: "btn btn-primary btn-block text-white", id: "comment_submit"
 
     - if @comments.present?
@@ -45,7 +45,7 @@
   });
 
   function checkField() {
-    if ($('#text').val().length > 5) {
+    if ($('#text').val().length >= 2) {
         $('#comment_submit').removeAttr('disabled');
     } else {
         $('#comment_submit').attr('disabled', 'disabled');

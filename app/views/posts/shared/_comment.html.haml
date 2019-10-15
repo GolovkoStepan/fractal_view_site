@@ -3,7 +3,7 @@
     .comment-author
       = comment.user.full_name
     .comment-delete
-      - if current_user == @post.user
+      - if current_user == @post.user || current_user == comment.user
         = link_to post_comment_path(@post, comment), method: :delete do
           %i.fas.fa-minus-circle
   .comment-body
