@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # Site
   get "download", to: "site#download"
+  get 'online_view', to: 'site#online_view'
 
   # Accounts
   get "account/user_info", to: "accounts#user_info"

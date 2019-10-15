@@ -1,0 +1,70 @@
+#description
+  %header
+    %div{:style => "text-align: center;"}
+      %hr/
+      %h1 Онлайн генератор
+      %p.headerText Множества Мандельброта
+      %hr/
+  %form#settingsForm{:action => "javascript:draw(getColorPicker(), getSamples());"}
+    %table
+      %tr
+        %td Время генерации
+        %td
+          %span#renderTime 0.0
+          секунд
+      %tr
+        %td Скорость
+        %td
+          %span#renderSpeed 0.00
+          px /
+          %span#renderSpeedUnit сек.
+      %tr
+        %td Число итераций
+        %td
+          %input#steps.textInput{:size => "4", :type => "text", :value => "50"}/
+          %input#autoIterations{:checked => "checked", :type => "checkbox"}/
+          %small авто
+      %tr
+        %td Радиус изображения
+        %td
+          %input#escapeRadius.textInput{:size => "4", :type => "text", :value => "10.0"}/
+      %tr
+        %td Цветовая схема
+        %td
+          %select#colorScheme
+            %option{:value => "pickColorGrayscale"} Grayscale #1
+            %option{:value => "pickColorHSV1"} HSV #1
+            %option{:value => "pickColorHSV2"} HSV #2 Red
+            %option{:value => "pickColorHSV3"} HSV #2 Blue
+            %option{:value => "pickColorGrayscale2"} Grayscale #2
+      %tr
+        %td Сглаживание
+        %td
+          %input#superSamples.textInput{:size => "4", :type => "text", :value => "1"}/
+      %tr
+        %td Обновление строки (ms)
+        %td
+          %input#updateTimeout.textInput{:size => "4", :type => "text", :value => "200"}/
+      %tr
+        %td{:colspan => "2"}  
+      %tr
+        %td{:colspan => "2"}
+          %input#submitButton{:type => "submit", :value => "Генерация"}/
+          \ 
+          %input#resetButton{:type => "reset", :value => "Сброс"}/
+          \ 
+          %input#viewPNG{:type => "button", :value => "Отобразить как PNG"}/
+  %hr/
+  #bottom
+    %small
+      Автор JS библиотеки
+      %a{:href => "https://csl.name"} Christian Stigen Larsen
+      %br
+      %a{:href => "https://github.com/cslarsen/mandelbrot-js"} Исходный код на Github
+    %br
+    = link_to "Вернутся на сайт", root_path, style: "float: right; padding: 10px;"
+#canvasContainer
+  %canvas#canvasMandelbrot{:height => "0", :width => "0"}
+  %canvas#canvasControls{:height => "0", :width => "0"}
+#infoBox
+  %span#infoText

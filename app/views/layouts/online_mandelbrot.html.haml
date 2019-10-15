@@ -1,0 +1,9 @@
+!!!
+%html{:lang => "en"}
+  %head
+    = stylesheet_link_tag 'mandelbrot_online'
+    %title The Mandelbrot Set in HTML5 Canvas & JavaScript
+
+  %body{:onload => "focusOnSubmit();"}
+    = yield
+    = javascript_include_tag "mandelbrot"

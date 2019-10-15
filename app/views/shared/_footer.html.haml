@@ -4,6 +4,8 @@
       .col-sm-6
         .mt-5
           %ul.footer-nav-links
+            %li.nav-item.nav-item-link
+              = link_to "Онлайн", online_view_path, class: "#{'nav-active' if current_page?(online_view_path)}"
             %li.nav-item-link
               = link_to "Загрузить", download_path, class: "#{'nav-active' if current_page?(download_path)}"
             %li.nav-item-link
