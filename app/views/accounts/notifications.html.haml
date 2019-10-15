@@ -5,9 +5,13 @@
 
   .col-sm-8
     .p-5
-    .d-flex.mb-4
-      = link_to "Отметить все прочитанным", account_notifications_read_path, class: "btn btn-primary ml-auto"
+    - if current_user.notifications.count > 0
+      .d-flex.mb-4
+        = link_to "Отметить все прочитанным", account_notifications_read_path, class: "btn btn-primary ml-auto"
 
-    = render partial: "accounts/shared/notification", collection: @notifications
-    .d-flex.justify-content-center
-      = paginate @notifications, theme: 'twitter-bootstrap-4'
+      = render partial: "accounts/shared/notification", collection: @notifications
+      .d-flex.justify-content-center
+        = paginate @notifications, theme: 'twitter-bootstrap-4'
+    - else
+      .text-white.text-20.text-w-600.text-center
+        У вас нет уведомлений
