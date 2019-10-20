@@ -4,7 +4,6 @@ SocialMedia.create!(site_name: "GitHub", site_url: "https://github.com/GolovkoSt
 
 User.create!(email: "admin@admin.com", password: "123123123", password_confirmation: "123123123", role: "admin")
 
-
 #ActiveRecord::Base.connection.tables.each do |table_name|
 #  ActiveRecord::Base.connection.reset_pk_sequence!(table_name)
 #end

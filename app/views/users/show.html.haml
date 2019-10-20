@@ -1,0 +1,17 @@
+.p-5
+.row
+  .col-sm-3
+    - if @user.avatar.attached?
+      = image_tag(url_for(@user.avatar), class: "w-100 mb-4 border-white")
+    - else
+      = image_tag("avatar-placeholder.gif", class: "w-100 mb-4 border-white")
+
+    .text-14.text-white
+      = "Возраст #{((Time.zone.now - @user.date_of_birth)/(60*60*24*365)).floor}"
+    .text-14.text-white
+      = "Email: #{@user.email}"
+  .col-sm-9
+    .text-24.text-white.mb-4
+      = @user.full_name
+    .text-16.text-white
+      = @user.bio

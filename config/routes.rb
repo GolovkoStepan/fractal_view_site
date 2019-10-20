@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
   root to: "site#index"
+
+  ActiveAdmin.routes(self)
 
   devise_for :users
 
   resources :posts do
     resources :comments
   end
+
+  resources :users, only: [:index, :show]
 
   # Site
   get "download", to: "site#download"

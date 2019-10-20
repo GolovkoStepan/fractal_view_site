@@ -28,4 +28,6 @@
             = f.label :bio, class: "form-label text-white"
             = f.text_area :bio, class: "form-control"
           .form-group
+            = f.file_field :avatar
+          .form-group
             = f.submit "Сохранить", class: "btn btn-success btn-lg btn-block"

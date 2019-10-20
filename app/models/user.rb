@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   has_many :notifications
 
+  has_one_attached :avatar
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   enum role: %I[user moderator admin]
@@ -31,8 +33,6 @@ class User < ApplicationRecord
 
   enum status: %I[active banned blocked]
   translate_enum :status
-
-  has_one_attached :avatar
 
   def full_name
     [first_name, last_name].join(' ')

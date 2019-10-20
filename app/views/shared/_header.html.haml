@@ -10,8 +10,13 @@
           = link_to "Онлайн", online_view_path, class: "#{'nav-active' if current_page?(online_view_path)}"
         %li.nav-item.nav-item-link
           = link_to "Загрузить", download_path, class: "#{'nav-active' if current_page?(download_path)}"
-        %li.nav-item.nav-item-link
-          = link_to "Работы пользователей", posts_path, class: "#{'nav-active' if current_page?(posts_path)}"
+
+        %li.nav-item.nav-item-link.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle.p-0{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Пользователи
+          .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+            = link_to "Работы пользователей", posts_path, class: "dropdown-item #{'nav-active' if current_page?(posts_path)}"
+            = link_to "Список пользователей", users_path, class: "dropdown-item #{'nav-active' if current_page?(users_path)}"
 
         -  if current_user.present?
           %li.nav-item.nav-item-link

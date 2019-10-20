@@ -1,15 +1,19 @@
 development:
-  adapter: sqlite3
-  database: development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: fractal_view_site_dev
+  username: stepangolovko
+  host: localhost
+  port: 5432
 test:
-  adapter: sqlite3
-  database: test.sqlite3
-  pool: 5
-  timeout: 5000
-
+  adapter: postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: fractal_view_site_test
+  host: localhost
+  port: 5432
 production:
   adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: fractal_view_site_production
+  database: fractal_view_site_prod
+  host: localhost
+  port: 5432

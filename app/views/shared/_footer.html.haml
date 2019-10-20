@@ -8,8 +8,6 @@
               = link_to "Онлайн", online_view_path, class: "#{'nav-active' if current_page?(online_view_path)}"
             %li.nav-item-link
               = link_to "Загрузить", download_path, class: "#{'nav-active' if current_page?(download_path)}"
-            %li.nav-item-link
-              = link_to "Работы пользователей", posts_path, class: "#{'nav-active' if current_page?(posts_path)}"
       .col-sm-6
         %ul.footer-social-links.mt-100
           - SocialMedia.all.each do |item|

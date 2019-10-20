@@ -13,6 +13,10 @@ class AccountsController < ApplicationController
     @user.gender = user_params[:gender]
     @user.bio = user_params[:bio]
 
+    if user_params[:avatar].present?
+      @user.avatar.attach(user_params[:avatar])
+    end
+
     if @user.save
       redirect_to account_user_info_path, notice: "Ваши  данные успешно обновлены."
     else
@@ -32,7 +36,7 @@ class AccountsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :gender, :bio)
+    params.require(:user).permit(:first_name, :last_name, :date_of_birth, :gender, :bio, :avatar)
   end
 
 end
