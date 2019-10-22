@@ -5,3 +5,10 @@
     .d-flex.justify-content-center
       = paginate @users, theme: 'twitter-bootstrap-4'
   .col-sm-4
+    .p-5
+    = search_form_for @q do |f|
+      .form-group
+        = f.label "Поиск по имени", class: "form-label text-white"
+        = f.search_field :first_name_or_last_name_cont, class: "form-control", value: "#{params[:q][:first_name_or_last_name_cont] if params[:q]}"
+      .form-group
+        = f.submit "Искать", class: "btn btn-success btn-lg btn-block"
