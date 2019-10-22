@@ -7,9 +7,20 @@
       .post-img
         = image_tag(url_for(@post.main_picture))
 
-      .post-img-link
-        Скачать оригинал
-        = link_to "", rails_blob_path(@post.main_picture, disposition: "attachment"), class: "fas fa-download"
+      .d-flex.mb-3
+        .post-like
+          - if @post.liked_by_user?(current_user)
+            = link_to post_unlike_path(@post), method: :post, local: true do
+              %i.fas.fa-heart
+              = @post.likes_count
+          - else
+            = link_to post_like_path(@post), method: :post, local: true do
+              %i.far.fa-heart
+              = @post.likes_count
+
+        .post-img-link.ml-auto
+          = link_to rails_blob_path(@post.main_picture, disposition: "attachment") do
+            %i.fas.fa-download
 
       .post-description
         = @post.description

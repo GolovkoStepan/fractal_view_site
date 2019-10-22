@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [ :index, :show ]
+  before_action :set_post, only: [ :like, :unlike ]
 
   def index
     @q = Post.ransack(params[:q])
@@ -40,7 +41,21 @@ class PostsController < ApplicationController
 
   end
 
+  def like
+    @post.like!(current_user)
+    redirect_to @post
+  end
+
+  def unlike
+    @post.unlike!(current_user)
+    redirect_to @post
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :description)

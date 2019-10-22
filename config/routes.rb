@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :comments
+    post "like", to: "posts#like"
+    post "unlike", to: "posts#unlike"
   end
 
   resources :users, only: [:index, :show]
