@@ -1,0 +1,7 @@
+.row
+  .col-sm-8
+    .p-5
+    = render partial: "users/shared/user", collection: @users
+    .d-flex.justify-content-center
+      = paginate @users, theme: 'twitter-bootstrap-4'
+  .col-sm-4

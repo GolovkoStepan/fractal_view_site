@@ -34,6 +34,8 @@ class User < ApplicationRecord
   enum status: %I[active banned blocked]
   translate_enum :status
 
+  paginates_per 8
+
   def full_name
     [first_name, last_name].join(' ')
   end
